@@ -18,9 +18,18 @@ function tambor(&$bolas) {
     return $bola;
 }
 
-function mostrarBola() {
+function mostrarBola($bola) {
 
-    
+    //Establezco la ruta donde se encuentra  la imagen de la bola.
+    $rutaImagen = './images/' . $bola . '.png';
+
+    //Codigo html para indexar la imagen de la bola en el html.
+    $html = '<div class="bola">';
+    $html .= '<img src="' . $rutaImagen . '" alt="Bola" />';
+    $html .= '</div>';
+
+    return $html;
+
 }
 
 
