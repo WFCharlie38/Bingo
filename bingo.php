@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bingo</title>
-    <link rel="stylesheet" type="text/css" href="estilo.css">
 </head>
 <body>
     <div name="j1" id="j1" class="carton">
         <?php
+        rellenar($carton1);
         mostrarCartonHTML($carton1);
         ?>
     </div>
@@ -24,10 +24,7 @@
     $carton1=[];
     $carton2=[];
     $carton3=[];
-
-
-    rellenar($carton1);
-    mostrarCartonHTML($carton1);
+    
     function rellenar(&$carton){
     for ($i=0; $i < 3; $i++) { 
         for ($j=0; $j < 7; $j++) { 
