@@ -1,18 +1,23 @@
 <?php
 
-$bolas = array();
+$bolas = range(1, 60);
 
 $bola = tambor($bolas);
 
 function tambor(&$bolas) {
     //Prueba commit
     //Genera una bola que no se encuentre en el array de bolas.
-    do {
-        $bola = rand(1,60);
-    } while (in_array($bola,$bolas));
+    //Selecciona una posicion aleatoria del array bolas para sacar la bola a continuación.
+    $posicionBola = rand(0,count($bolas)-1);
+
+    //Coge una bola del tambor.
+    $bola = $bolas[$posicionBola];
     
-    //Asigna la bola al array bolas al final de este.
-    $bolas[] = $bola;
+    //Elimina la bola del array bolas.
+    unset($bolas[$posicionBola]);
+
+    //Reindexa el array.
+    $bolas = array_values($bolas);
 
     //Devuelve el valor de la bola para ser utilizado en los cartones.
     return $bola;
@@ -31,6 +36,5 @@ function mostrarBola($bola) {
     return $html;
 
 }
-
 
 ?>
