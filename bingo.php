@@ -143,8 +143,8 @@
     $carton3=[];
 
 
-    rellenar($carton);
-    mostrarCarton($carton);
+    rellenar(&$carton1);
+    mostrarCartonHTML($carton1);
     function rellenar(&$carton){
     for ($i=0; $i < 3; $i++) { 
         for ($j=0; $j < 7; $j++) { 
@@ -197,7 +197,7 @@
      }
     }
 
-   function mostrarCartonHTML($carton)
+   function mostrarCartonHTML(&$carton)
 {
     echo "<table border='1' cellpadding='5' cellspacing='0'>";
 
