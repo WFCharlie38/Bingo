@@ -5,7 +5,7 @@ $bolas = array();
 $bola = tambor($bolas);
 
 function tambor(&$bolas) {
-    
+    //Prueba commit
     //Genera una bola que no se encuentre en el array de bolas.
     do {
         $bola = rand(1,60);
