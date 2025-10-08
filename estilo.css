@@ -1,0 +1,30 @@
+div{
+    position: absolute;
+}
+
+div#j1{
+    margin-left: 50px;
+}
+div#j2{
+    margin-left: 350px;
+}
+div#j3{
+    margin-left: 650px;
+}
+div#j4{
+    margin-left: 950px;
+}
+
+table,tr,td{
+    border: solid;
+    font-size: 30px;
+}
+table{
+    border-width: 3px;
+    border-collapse: collapse;
+}
+tr,td{
+    border-width: 1px;
+    border-collapse: collapse;
+    padding: 10px;
+}
