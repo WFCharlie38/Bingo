@@ -11,19 +11,19 @@
         rellenar($carton1);
         mostrarCartonHTML($carton1);
         ?>
-    </div>
+    </div><br>
         <div name="j2" id="j2" class="carton">
         <?php
         rellenar($carton4);
         mostrarCartonHTML($carton4);
         ?>
-    </div>
+    </div><br>
         <div name="j3" id="j3" class="carton">
         <?php
         rellenar($carton7);
         mostrarCartonHTML($carton7);
         ?>
-    </div>
+    </div><br>
         <div name="j4" id="j4" class="carton">
         <?php
         rellenar($carton10);
