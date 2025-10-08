@@ -9,7 +9,6 @@
 <body>
     <div name="j1" id="j1" class="carton">
         <?php
-        mostrarCartonHTML($carton1);
         ?>
     </div>
 </body>
