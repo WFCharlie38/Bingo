@@ -12,6 +12,25 @@
         mostrarCartonHTML($carton1);
         ?>
     </div>
+        <div name="j2" id="j2" class="carton">
+        <?php
+        rellenar($carton4);
+        mostrarCartonHTML($carton4);
+        ?>
+    </div>
+        <div name="j3" id="j3" class="carton">
+        <?php
+        rellenar($carton7);
+        mostrarCartonHTML($carton7);
+        ?>
+    </div>
+        <div name="j4" id="j4" class="carton">
+        <?php
+        rellenar($carton10);
+        mostrarCartonHTML($carton10);
+        ?>
+    </div>
+
 </body>
 </html>
 
@@ -22,8 +41,9 @@
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //Parte de Martin
     $carton1=[];
-    $carton2=[];
-    $carton3=[];
+    $carton4=[];
+    $carton7=[];
+    $carton10=[];
     
     function rellenar(&$carton){
     for ($i=0; $i < 3; $i++) { 
@@ -132,9 +152,7 @@ function mostrarBola($bola) {
     $rutaImagen = './images/' . $bola . '.png';
 
     //Codigo html para indexar la imagen de la bola en el html.
-    $html = '<div class="bola">';
-    $html .= '<img src="' . $rutaImagen . '" alt="Bola" />';
-    $html .= '</div>';
+    echo '<img src="' . $rutaImagen . '" alt="Bola" />';
 
     return $html;
 
