@@ -4,13 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bingo</title>
-    <link rel="stylesheet" type="text/css" href="estilo.css">
 </head>
 <body>
     <div name="j1" id="j1" class="carton">
         <?php
+        rellenar($carton1);
+        mostrarCartonHTML($carton1);
         ?>
     </div>
+        <div name="j2" id="j2" class="carton">
+        <?php
+        rellenar($carton4);
+        mostrarCartonHTML($carton4);
+        ?>
+    </div>
+        <div name="j3" id="j3" class="carton">
+        <?php
+        rellenar($carton7);
+        mostrarCartonHTML($carton7);
+        ?>
+    </div>
+        <div name="j4" id="j4" class="carton">
+        <?php
+        rellenar($carton10);
+        mostrarCartonHTML($carton10);
+        ?>
+    </div>
+
 </body>
 </html>
 
@@ -21,12 +41,10 @@
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //Parte de Martin
     $carton1=[];
-    $carton2=[];
-    $carton3=[];
-
-
-    rellenar($carton1);
-    mostrarCartonHTML($carton1);
+    $carton4=[];
+    $carton7=[];
+    $carton10=[];
+    
     function rellenar(&$carton){
     for ($i=0; $i < 3; $i++) { 
         for ($j=0; $j < 7; $j++) { 
@@ -134,9 +152,7 @@ function mostrarBola($bola) {
     $rutaImagen = './images/' . $bola . '.png';
 
     //Codigo html para indexar la imagen de la bola en el html.
-    $html = '<div class="bola">';
-    $html .= '<img src="' . $rutaImagen . '" alt="Bola" />';
-    $html .= '</div>';
+    echo '<img src="' . $rutaImagen . '" alt="Bola" />';
 
     return $html;
 
