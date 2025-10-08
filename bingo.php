@@ -41,6 +41,49 @@
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //Parte de Martin
+
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+    }
+
     $carton1=[];
     $carton4=[];
     $carton7=[];
@@ -132,7 +175,7 @@ function tambor(&$bolas) {
 
     //Selecciona una posicion aleatoria del array bolas para sacar la bola a continuación.
     do {
-        $posicionBola = rand(0,60);
+        $posicionBola = rand(0,59);
     } while ($bolas[$posicionBola] == true);
     //True = bola ha salido.
     //False = bola no ha salido.
