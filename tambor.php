@@ -1,18 +1,23 @@
 <?php
 
-$bolas = array();
+$bolas = array_fill(0, 60,false);
 
 $bola = tambor($bolas);
 
 function tambor(&$bolas) {
-    
-    //Genera una bola que no se encuentre en el array de bolas.
+
+    //Selecciona una posicion aleatoria del array bolas para sacar la bola a continuación.
     do {
-        $bola = rand(1,60);
-    } while (in_array($bola,$bolas));
+        $posicionBola = rand(0,60);
+    } while ($bolas[$posicionBola] == true);
+    //True = bola ha salido.
+    //False = bola no ha salido.
+
+    //Adquirimos la bola.
+    $bola = $posicionBola+1;
     
-    //Asigna la bola al array bolas al final de este.
-    $bolas[] = $bola;
+    //Establecemos la posicion en true.
+    $bolas[$posicionBola] = true;
 
     //Devuelve el valor de la bola para ser utilizado en los cartones.
     return $bola;
@@ -31,6 +36,5 @@ function mostrarBola($bola) {
     return $html;
 
 }
-
 
 ?>
