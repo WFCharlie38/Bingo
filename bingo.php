@@ -143,7 +143,7 @@
     $carton3=[];
 
 
-    rellenar(&$carton1);
+    rellenar($carton1);
     mostrarCartonHTML($carton1);
     function rellenar(&$carton){
     for ($i=0; $i < 3; $i++) { 
