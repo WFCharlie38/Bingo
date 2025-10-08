@@ -5,6 +5,8 @@ $bolas = range(1, 60);
 $bola = tambor($bolas);
 
 function tambor(&$bolas) {
+    //Prueba commit
+    //Genera una bola que no se encuentre en el array de bolas.
     //Selecciona una posicion aleatoria del array bolas para sacar la bola a continuación.
     $posicionBola = rand(0,count($bolas)-1);
 
