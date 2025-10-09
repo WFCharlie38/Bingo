@@ -6,6 +6,7 @@
     <title>Bingo</title>
 </head>
 <body>
+    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
     <div name="j1" id="j1" class="carton">
         <?php
         rellenar($carton1);
@@ -30,7 +31,11 @@
         mostrarCartonHTML($carton10);
         ?>
     </div>
-
+    <input type="submit" value="Sacar bola" style="padding: 10px 20px; border-width: 2px; border-color: aquamarine; background-color: teal; color: white; border-radius: 5px; cursor: pointer">
+    <?php
+        echo tambor($bola);
+    ?>
+</form>
 </body>
 </html>
 
