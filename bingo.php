@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bingo</title>
+    <link rel="stylesheet" type="text/css" href="estilo.css">
 </head>
 <body>
     <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
@@ -12,23 +13,28 @@
         rellenar($carton1);
         mostrarCartonHTML($carton1);
         ?>
-    </div><br>
+    </div>
         <div name="j2" id="j2" class="carton">
         <?php
         rellenar($carton4);
         mostrarCartonHTML($carton4);
         ?>
-    </div><br>
+    </div>
         <div name="j3" id="j3" class="carton">
         <?php
         rellenar($carton7);
         mostrarCartonHTML($carton7);
         ?>
-    </div><br>
+    </div>
         <div name="j4" id="j4" class="carton">
         <?php
         rellenar($carton10);
         mostrarCartonHTML($carton10);
+        ?>
+    <div>
+    <div name="bolas" id="bolas">
+        <?php
+        mostrarBolas();
         ?>
     </div>
     <input type="submit" value="Sacar bola" style="padding: 10px 20px; border-width: 2px; border-color: aquamarine; background-color: teal; color: white; border-radius: 5px; cursor: pointer">
@@ -36,6 +42,7 @@
         echo tambor($bola);
     ?>
 </form>
+
 </body>
 </html>
 
@@ -45,6 +52,49 @@
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //Parte de Martin
+
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    }
+
     $carton1=[];
     $carton4=[];
     $carton7=[];
@@ -102,9 +152,19 @@
      }
     }
 
+    //Funcion para marcar encontrar numero en los cartones
+    function encontarNumero(&$carton, $bola){
+        for ($i=0; $i < 3; $i++) { 
+            for ($j=0; $j < 7 ; $j++) { 
+                if ($carton[$i][$j]==$bola) {
+                    $carton[$i][$j] == 0;
+                }
+            }
+        }
+    }
    function mostrarCartonHTML(&$carton)
 {
-    echo "<table border='1' cellpadding='5' cellspacing='0'>";
+    echo "<table>";
 
     for ($i = 0; $i < 3; $i++) {
         echo "<tr>"; // fila
@@ -112,7 +172,14 @@
             $valor = $carton[$i][$j];
             // Si quieres, puedes mostrar vacío si es 0 o null
             $contenido = ($valor === 0 || $valor === null) ? "&nbsp;" : $valor;
-            echo "<td style='text-align:center;'>$contenido</td>";
+            if ($valor===0) {
+                $contenido = 0;
+                $color= "background-color: #8BC34A;";
+            }else{
+                $contenido = $valor;
+                $color = "";
+            }
+            echo "<td style='width:40px; height:40px; text-align:center; $color'>$contenido</td>";
         }
         echo "</tr>";
     }
@@ -159,7 +226,26 @@ function mostrarBola($bola) {
     //Codigo html para indexar la imagen de la bola en el html.
     echo '<img src="' . $rutaImagen . '" alt="Bola" />';
 
-    return $html;
+}
+
+function mostrarBolas() {
+    $contador=1;
+
+    echo "<table border='1' cellpadding='5' cellspacing='0'>";
+
+    for ($i = 0; $i < 4; $i++) {
+        echo "<tr>";
+        for ($j = 0; $j < 15; $j++) {
+            echo "<td style='text-align:center;'>";
+            echo "<img src='./images/$contador.png' width='50' height='50'>";
+            echo "</td>";
+            $contador++;
+        }
+        echo "</tr>";
+    }
+
+
+    echo "</table>";
 
 }
 
