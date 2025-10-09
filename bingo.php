@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bingo</title>
+    <link rel="stylesheet" type="text/css" href="estilo.css">
 </head>
 <body>
     <div name="j1" id="j1" class="carton">
@@ -11,19 +12,19 @@
         rellenar($carton1);
         mostrarCartonHTML($carton1);
         ?>
-    </div><br>
+    </div>
         <div name="j2" id="j2" class="carton">
         <?php
         rellenar($carton4);
         mostrarCartonHTML($carton4);
         ?>
-    </div><br>
+    </div>
         <div name="j3" id="j3" class="carton">
         <?php
         rellenar($carton7);
         mostrarCartonHTML($carton7);
         ?>
-    </div><br>
+    </div>
         <div name="j4" id="j4" class="carton">
         <?php
         rellenar($carton10);
@@ -152,7 +153,7 @@
     }
    function mostrarCartonHTML(&$carton)
 {
-    echo "<table border='1' cellpadding='5' cellspacing='0'>";
+    echo "<table>";
 
     for ($i = 0; $i < 3; $i++) {
         echo "<tr>"; // fila
