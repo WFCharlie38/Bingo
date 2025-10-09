@@ -29,7 +29,13 @@
         rellenar($carton10);
         mostrarCartonHTML($carton10);
         ?>
+    <div>
+    <div name="bolas" id="bolas">
+        <?php
+        mostrarBolas();
+        ?>
     </div>
+
 
 </body>
 </html>
@@ -80,7 +86,7 @@
 
 
 
-        
+
     }
 
     $carton1=[];
@@ -197,7 +203,26 @@ function mostrarBola($bola) {
     //Codigo html para indexar la imagen de la bola en el html.
     echo '<img src="' . $rutaImagen . '" alt="Bola" />';
 
-    return $html;
+}
+
+function mostrarBolas() {
+    $contador=1;
+
+    echo "<table border='1' cellpadding='5' cellspacing='0'>";
+
+    for ($i = 0; $i < 4; $i++) {
+        echo "<tr>";
+        for ($j = 0; $j < 15; $j++) {
+            echo "<td style='text-align:center;'>";
+            echo "<img src='./images/$contador.png' width='50' height='50'>";
+            echo "</td>";
+            $contador++;
+        }
+        echo "</tr>";
+    }
+
+
+    echo "</table>";
 
 }
 
