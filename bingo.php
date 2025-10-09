@@ -140,6 +140,16 @@
      }
     }
 
+    //Funcion para marcar encontrar numero en los cartones
+    function encontarNumero(&$carton, $bola){
+        for ($i=0; $i < 3; $i++) { 
+            for ($j=0; $j < 7 ; $j++) { 
+                if ($carton[$i][$j]==$bola) {
+                    $carton[$i][$j] == 0;
+                }
+            }
+        }
+    }
    function mostrarCartonHTML(&$carton)
 {
     echo "<table border='1' cellpadding='5' cellspacing='0'>";
@@ -150,7 +160,14 @@
             $valor = $carton[$i][$j];
             // Si quieres, puedes mostrar vacío si es 0 o null
             $contenido = ($valor === 0 || $valor === null) ? "&nbsp;" : $valor;
-            echo "<td style='text-align:center;'>$contenido</td>";
+            if ($valor===0) {
+                $contenido = 0;
+                $color= "background-color: #8BC34A;";
+            }else{
+                $contenido = $valor;
+                $color = "";
+            }
+            echo "<td style='width:40px; height:40px; text-align:center; $color'>$contenido</td>";
         }
         echo "</tr>";
     }
