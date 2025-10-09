@@ -1,22 +1,53 @@
 div{
     position: absolute;
 }
-
+.carton h2{
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    font-size: 35px;
+    padding: 0px;
+    margin: 3px;
+}
 div#j1{
     margin-left: 50px;
+    background-color: rgba(8, 56, 230, 0.226);
+    border: solid rgba(8, 49, 230, 0.978) 5px ;
+    padding: 5px;
+    border-radius: 5px;
+    
 }
+
 div#j2{
-    margin-left: 350px;
+    margin-left: 450px;
+    background-color: rgba(230, 149, 8, 0.226);
+    border: solid rgba(230, 134, 8, 0.978) 5px ;
+    padding: 5px;
+    border-radius: 5px;
 }
 div#j3{
-    margin-left: 650px;
+    margin-left: 850px;
+    background-color: rgba(230, 219, 8, 0.226);
+    border: solid rgba(230, 212, 8, 0.978) 5px ;
+    padding: 5px;
+    border-radius: 5px;
 }
 div#j4{
-    margin-left: 950px;
+    margin-left: 1250px;
+    background-color: rgba(101, 8, 230, 0.226);
+    border: solid rgba(108, 8, 230, 0.978) 5px ;
+    padding: 5px;
+    border-radius: 5px;
+}
+#bolas{
+    box-shadow: 10px 10px;
+    border-radius: 5px;
+    margin-left: 850px;
+    margin-top: 600px;
 }
 table,tr,td{
     border: solid;
     font-size: 20px;
+    background-color: white;
 }
 table{
     border-width: 3px;
@@ -31,4 +62,15 @@ tr,td{
 }
 td{
     text-align:center;
+}
+input#sacarbola{
+    position: absolute;
+    margin-top: 600px;
+    padding: 10px 20px; 
+    border-width: 2px; 
+    border-color: aquamarine; 
+    background-color: teal; 
+    color: white; 
+    border-radius: 5px; 
+    cursor: pointer;
 }

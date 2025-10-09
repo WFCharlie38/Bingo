@@ -7,39 +7,59 @@
     <link rel="stylesheet" type="text/css" href="estilo.css">
 </head>
 <body>
-    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+    <form method="post" class="formu" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
     <div name="j1" id="j1" class="carton">
+        <h2>Jugador 1</h2>
         <?php
         rellenar($carton1);
         mostrarCartonHTML($carton1);
+        echo "<br>";
+        // carton
+        echo "<br>";
+        // carton
         ?>
     </div>
         <div name="j2" id="j2" class="carton">
+            <h2>Jugador 2</h2>
         <?php
         rellenar($carton4);
         mostrarCartonHTML($carton4);
+        echo "<br>";
+        // carton
+        echo "<br>";
+        // carton
         ?>
     </div>
         <div name="j3" id="j3" class="carton">
+            <h2>Jugador 3</h2>
         <?php
         rellenar($carton7);
         mostrarCartonHTML($carton7);
+        echo "<br>";
+        // carton
+        echo "<br>";
+        // carton
         ?>
     </div>
         <div name="j4" id="j4" class="carton">
+            <h2>Jugador 4</h2>
         <?php
         rellenar($carton10);
         mostrarCartonHTML($carton10);
+        echo "<br>";
+        // carton
+        echo "<br>";
+        // carton
         ?>
-    <div>
+    </div>
     <div name="bolas" id="bolas">
         <?php
         mostrarBolas();
         ?>
     </div>
-    <input type="submit" value="Sacar bola" style="padding: 10px 20px; border-width: 2px; border-color: aquamarine; background-color: teal; color: white; border-radius: 5px; cursor: pointer">
+    <input id="sacarbola" type="submit" value="Sacar bola">
     <?php
-        echo tambor($bola);
+        echo tambor($bola); // Es el númerito que aparece arriba a la izquierda
     ?>
 </form>
 
