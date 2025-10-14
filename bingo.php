@@ -168,6 +168,39 @@
     echo "</table>";
 }
 
+function comprobarGanador($cartones)
+{
+    $cartonesPorJugador = 3; // 3 cartones por jugador
+    $numCartones = count($cartones);
+
+    for ($i = 0; $i < $numCartones; $i++) {
+        $gana = true;
+
+        // Recorre todas las posiciones del cartón
+        for ($fila = 0; $fila < count($cartones[$i]); $fila++) {
+            for ($col = 0; $col < count($cartones[$i][$fila]); $col++) {
+                $v = $cartones[$i][$fila][$col];
+                if ($v !== 0 && $v !== null) {
+                    $gana = false;
+                }
+            }
+        }
+
+        // Si ha ganado, calculamos a qué jugador pertenece este cartón
+        if ($gana) {
+            $jugador = intdiv($i, $cartonesPorJugador) + 1;  // jugador 1–4
+            $cartonNum = ($i % $cartonesPorJugador) + 1;     // cartón 1–3 dentro del jugador
+
+            return [
+                'jugador' => $jugador,
+                'carton' => $cartonNum,
+                'indice' => $i
+            ];
+        }
+    }
+
+    return null;
+}
 
 
 
