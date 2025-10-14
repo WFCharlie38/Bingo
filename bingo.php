@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bingo</title>
-    <link rel="stylesheet" type="text/css" href="estilo.css">
+    <link rel="stylesheet" type="text/css" href="estilo.css?v=<?php echo time(); ?>">
 </head>
 <body>
-    <form method="post" class="formu" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+    
     <div name="j1" id="j1" class="carton">
         <h2>Jugador 1</h2>
         <?php
@@ -57,10 +57,8 @@
         mostrarBolas();
         ?>
     </div>
-    <input id="sacarbola" type="submit" value="Sacar bola">
-    <?php
-        echo tambor($bola); // Es el númerito que aparece arriba a la izquierda
-    ?>
+<form method="post" class="formu" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+     <button type="submit" name="accion" value="saludar">Sacar bola</button>
 </form>
 
 </body>
@@ -74,43 +72,6 @@
     //Parte de Martin
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     }
