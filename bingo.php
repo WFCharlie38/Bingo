@@ -57,9 +57,6 @@
         mostrarBolas();
         ?>
     </div>
-<form method="post" class="formu" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-     <button type="submit" name="accion" value="saludar">Sacar bola</button>
-</form>
 
 </body>
 </html>
