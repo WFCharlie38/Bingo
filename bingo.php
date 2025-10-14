@@ -173,7 +173,8 @@
     }
 
     //Funcion para marcar encontrar numero en los cartones
-    function encontarNumero(&$carton, $bola){
+    function encontarNumero(&$carton, &$bolas, $bola){
+        $bolas[$bola+1] = true;
         for ($i=0; $i < 3; $i++) { 
             for ($j=0; $j < 7 ; $j++) { 
                 if ($carton[$i][$j]==$bola) {
