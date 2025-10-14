@@ -14,9 +14,11 @@
         rellenar($carton1);
         mostrarCartonHTML($carton1);
         echo "<br>";
-        // carton
+        rellenar($carton2);
+        mostrarCartonHTML($carton2);
         echo "<br>";
-        // carton
+        rellenar($carton3);
+        mostrarCartonHTML($carton3);
         ?>
     </div>
         <div name="j2" id="j2" class="carton">
@@ -25,9 +27,11 @@
         rellenar($carton4);
         mostrarCartonHTML($carton4);
         echo "<br>";
-        // carton
+        rellenar($carton5);
+        mostrarCartonHTML($carton5);
         echo "<br>";
-        // carton
+        rellenar($carton6);
+        mostrarCartonHTML($carton6);
         ?>
     </div>
         <div name="j3" id="j3" class="carton">
@@ -36,9 +40,11 @@
         rellenar($carton7);
         mostrarCartonHTML($carton7);
         echo "<br>";
-        // carton
+        rellenar($carton8);
+        mostrarCartonHTML($carton8);
         echo "<br>";
-        // carton
+        rellenar($carton9);
+        mostrarCartonHTML($carton9);
         ?>
     </div>
         <div name="j4" id="j4" class="carton">
@@ -47,14 +53,11 @@
         rellenar($carton10);
         mostrarCartonHTML($carton10);
         echo "<br>";
-        // carton
+        rellenar($carton11);
+        mostrarCartonHTML($carton11);
         echo "<br>";
-        // carton
-        ?>
-    </div>
-    <div name="bolas" id="bolas">
-        <?php
-        mostrarBolas();
+        rellenar($carton12);
+        mostrarCartonHTML($carton12);
         ?>
     </div>
 
@@ -68,15 +71,18 @@
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //Parte de Martin
 
-    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
-
-    }
-
     $carton1=[];
+    $carton2=[];
+    $carton3=[];
     $carton4=[];
+    $carton5=[];
+    $carton6=[];
     $carton7=[];
+    $carton8=[];
+    $carton9=[];
     $carton10=[];
+    $carton11=[];
+    $carton12=[];
     
     function rellenar(&$carton){
     for ($i=0; $i < 3; $i++) { 
