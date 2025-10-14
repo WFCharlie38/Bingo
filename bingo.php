@@ -135,11 +135,13 @@
 
     //Funcion para marcar encontrar numero en los cartones
     function encontarNumero(&$carton, &$bolas, $bola){
-        $bolas[$bola+1] = true;
+        if ($bolas[$bola-1]==false) {
+            $bolas[$bola-1] = true;
+        }
         for ($i=0; $i < 3; $i++) { 
             for ($j=0; $j < 7 ; $j++) { 
                 if ($carton[$i][$j]==$bola) {
-                    $carton[$i][$j] == 0;
+                    $carton[$i][$j] = 0;
                 }
             }
         }
