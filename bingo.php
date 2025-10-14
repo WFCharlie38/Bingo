@@ -7,91 +7,124 @@
     <link rel="stylesheet" type="text/css" href="estilo.css?v=<?php echo time(); ?>">
 </head>
 <body>
-    
-    <div name="j1" id="j1" class="carton">
-        <h2>Jugador 1</h2>
-        <?php
-        rellenar($carton1);
-        mostrarCartonHTML($carton1);
-        echo "<br>";
-        rellenar($carton2);
-        mostrarCartonHTML($carton2);
-        echo "<br>";
-        rellenar($carton3);
-        mostrarCartonHTML($carton3);
-        ?>
-    </div>
-        <div name="j2" id="j2" class="carton">
-            <h2>Jugador 2</h2>
-        <?php
-        rellenar($carton4);
-        mostrarCartonHTML($carton4);
-        echo "<br>";
-        rellenar($carton5);
-        mostrarCartonHTML($carton5);
-        echo "<br>";
-        rellenar($carton6);
-        mostrarCartonHTML($carton6);
-        ?>
-    </div>
-        <div name="j3" id="j3" class="carton">
-            <h2>Jugador 3</h2>
-        <?php
-        rellenar($carton7);
-        mostrarCartonHTML($carton7);
-        echo "<br>";
-        rellenar($carton8);
-        mostrarCartonHTML($carton8);
-        echo "<br>";
-        rellenar($carton9);
-        mostrarCartonHTML($carton9);
-        ?>
-    </div>
-        <div name="j4" id="j4" class="carton">
-            <h2>Jugador 4</h2>
-        <?php
-        rellenar($carton10);
-        mostrarCartonHTML($carton10);
-        echo "<br>";
-        rellenar($carton11);
-        mostrarCartonHTML($carton11);
-        echo "<br>";
-        rellenar($carton12);
-        mostrarCartonHTML($carton12);
-        ?>
-    </div>
+    <?php
+    $carton1=[]; $carton2=[]; $carton3=[];
+    $carton4=[]; $carton5=[]; $carton6=[];
+    $carton7=[]; $carton8=[]; $carton9=[];
+    $carton10=[]; $carton11=[]; $carton12=[];
 
+    $bolas = array_fill(0, 60,false);
+
+    $mientrasganador = false;
+
+    $jugadorGanador = 0; 
+    $cartonGanador = 0;
+
+    rellenar($carton1);
+    rellenar($carton2);
+    rellenar($carton3);
+    rellenar($carton4);
+    rellenar($carton5);
+    rellenar($carton6);
+    rellenar($carton7);
+    rellenar($carton8);
+    rellenar($carton9);
+    rellenar($carton10);
+    rellenar($carton11);
+    rellenar($carton12);
+
+    $jugador1 = [&$carton1, &$carton2, &$carton3];
+    $jugador2 = [&$carton4, &$carton5, &$carton6];
+    $jugador3 = [&$carton7, &$carton8, &$carton9];
+    $jugador4 = [&$carton10, &$carton11, &$carton12];
+
+    do {
+        $bola = tambor($bolas);
+
+        // Buscar la bola en todos los cartones
+        encontarNumero($carton1,$bola);
+        encontarNumero($carton2,$bola);
+        encontarNumero($carton3,$bola);
+        encontarNumero($carton4,$bola);
+        encontarNumero($carton5,$bola);
+        encontarNumero($carton6,$bola);
+        encontarNumero($carton7,$bola);
+        encontarNumero($carton8,$bola);
+        encontarNumero($carton9,$bola);
+        encontarNumero($carton10,$bola);
+        encontarNumero($carton11,$bola);
+        encontarNumero($carton12,$bola);
+
+        // Comprobar ganador
+        comprobarGanador($jugador1,"1",$mientrasganador,$jugadorGanador,$cartonGanador);
+        comprobarGanador($jugador2,"2",$mientrasganador,$jugadorGanador,$cartonGanador);
+        comprobarGanador($jugador3,"3",$mientrasganador,$jugadorGanador,$cartonGanador);
+        comprobarGanador($jugador4,"4",$mientrasganador,$jugadorGanador,$cartonGanador);
+
+    } while (!$mientrasganador);
+    ?>
+    <h1 id="titulo" >BINGO<h1>
+        <div class="contenedor-jugadores">
+            <div id="j1" class="carton">
+                <h2>Jugador 1</h2>
+                <?php
+                mostrarCartonHTML($carton1);
+                echo "<br>";
+                mostrarCartonHTML($carton2);
+                echo "<br>";
+                mostrarCartonHTML($carton3);
+                ?>
+            </div>
+            <div id="j2" class="carton">
+                <h2>Jugador 2</h2>
+                <?php
+                mostrarCartonHTML($carton4);
+                echo "<br>";
+                mostrarCartonHTML($carton5);
+                echo "<br>";
+                mostrarCartonHTML($carton6);
+                ?>
+            </div>
+            <div id="j3" class="carton">
+                <h2>Jugador 3</h2>
+                <?php
+                mostrarCartonHTML($carton7);
+                echo "<br>";
+                mostrarCartonHTML($carton8);
+                echo "<br>";
+                mostrarCartonHTML($carton9);
+                ?>
+            </div>
+            <div id="j4" class="carton">
+                <h2>Jugador 4</h2>
+                <?php
+                mostrarCartonHTML($carton10);
+                echo "<br>";
+                mostrarCartonHTML($carton11);
+                echo "<br>";
+                mostrarCartonHTML($carton12);
+                ?>
+            </div>
+        </div>
+    <div class="ganador">
+        <h2>GANADOR</h2>
+        <?php
+        echo "JUGADOR: $jugadorGanador</br>";
+        echo "CARTON: $cartonGanador</br>";
+        ?>
+    </div>
 </body>
 </html>
-
-
-<?php
-    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    //Parte de Martin
-
-    $carton1=[];
-    $carton2=[];
-    $carton3=[];
-    $carton4=[];
-    $carton5=[];
-    $carton6=[];
-    $carton7=[];
-    $carton8=[];
-    $carton9=[];
-    $carton10=[];
-    $carton11=[];
-    $carton12=[];
-    
+<?php    
     function rellenar(&$carton){
     for ($i=0; $i < 3; $i++) { 
         for ($j=0; $j < 7; $j++) { 
                 //Creo un número aleatorio del 1 al 60 y luego llamo a la función comprobar, que se asegura que no hayan números repetidos en el array 
-                $carton[$i][$j]=rand(1,60);
+                $num = rand(1, 60);
                 if($i>0 || $j>0){
-                    comprobar($carton[$i][$j],$carton,$i,$j);
+                    comprobar($num, $carton, $i, $j);
                 }
+                $carton[$i][$j] = ['num' => $num, 'salido' => false];
             }
         }
         borrarAleatorio($carton);
@@ -137,141 +170,84 @@
     }
 
     //Funcion para marcar encontrar numero en los cartones
-    function encontarNumero(&$carton, &$bolas, $bola){
-        if ($bolas[$bola-1]==false) {
-            $bolas[$bola-1] = true;
-        }
-        for ($i=0; $i < 3; $i++) { 
-            for ($j=0; $j < 7 ; $j++) { 
-                if ($carton[$i][$j]==$bola) {
-                    $carton[$i][$j] = 0;
+    function encontarNumero(&$carton, $bola) {
+        for ($i = 0; $i < count($carton); $i++) {
+            for ($j = 0; $j < count($carton[$i]); $j++) {
+                if ($carton[$i][$j] !== null && $carton[$i][$j]['num'] == $bola) {
+                    $carton[$i][$j]['salido'] = true;
                 }
             }
         }
     }
-   function mostrarCartonHTML(&$carton)
-{
+
+  function mostrarCartonHTML(&$carton) {
     echo "<table>";
 
     for ($i = 0; $i < 3; $i++) {
-        echo "<tr>"; // fila
+        echo "<tr>";
         for ($j = 0; $j < 7; $j++) {
-            $valor = $carton[$i][$j];
-            // Si quieres, puedes mostrar vacío si es 0 o null
-            $contenido = ($valor === 0 || $valor === null) ? "&nbsp;" : $valor;
-            if ($valor===0) {
-                $contenido = 0;
-                $color= "background-color: #8BC34A;";
-            }else{
-                $contenido = $valor;
+            if ($carton[$i][$j] === null) {
+                $contenido = "&nbsp;";
                 $color = "";
+            } else {
+                $valor = $carton[$i][$j]['num'];
+                $salido = $carton[$i][$j]['salido'];
+                $color = $salido ? "background-color: #8BC34A;" : "";
+                $contenido = $valor;
             }
+
             echo "<td style='width:40px; height:40px; text-align:center; $color'>$contenido</td>";
         }
         echo "</tr>";
     }
 
     echo "</table>";
-}
+    }
 
-function comprobarGanador($cartones)
-{
-    $cartonesPorJugador = 3; // 3 cartones por jugador
-    $numCartones = count($cartones);
+    function comprobarGanador($cartones, $jugador, &$mientrasganador, &$jugadorGanador, &$cartonGanador) {
+        $cartonesPorJugador = 3; // 3 cartones por jugador
+        $numCartones = count($cartones);
 
-    for ($i = 0; $i < $numCartones; $i++) {
-        $gana = true;
+        for ($i = 0; $i < $numCartones; $i++) {
+            $gana = true;
 
-        // Recorre todas las posiciones del cartón
-        for ($fila = 0; $fila < count($cartones[$i]); $fila++) {
-            for ($col = 0; $col < count($cartones[$i][$fila]); $col++) {
-                $v = $cartones[$i][$fila][$col];
-                if ($v !== 0 && $v !== null) {
-                    $gana = false;
+            // Recorre todas las posiciones del cartón
+            for ($fila = 0; $fila < count($cartones[$i]); $fila++) {
+                for ($col = 0; $col < count($cartones[$i][$fila]); $col++) {
+                    $celda = $cartones[$i][$fila][$col];
+                    if ($celda !== null && !$celda['salido']) {
+                        $gana = false;
+                    }
                 }
+            }
+
+            // Si ha ganado, modificamos las variables $jugadorGanador y $cartonNumGanador
+            if ($gana) {
+                $jugadorGanador = $jugador;  // jugador 1–4
+                $cartonGanador = ($i % $cartonesPorJugador) + 1;     // cartón 1–3 dentro del jugador
+                $mientrasganador = true;
             }
         }
 
-        // Si ha ganado, calculamos a qué jugador pertenece este cartón
-        if ($gana) {
-            $jugador = intdiv($i, $cartonesPorJugador) + 1;  // jugador 1–4
-            $cartonNum = ($i % $cartonesPorJugador) + 1;     // cartón 1–3 dentro del jugador
-
-            return [
-                'jugador' => $jugador,
-                'carton' => $cartonNum,
-                'indice' => $i
-            ];
-        }
+        return null;
     }
 
-    return null;
-}
+    function tambor(&$bolas) {
 
+        //Selecciona una posicion aleatoria del array bolas para sacar la bola a continuación.
+        do {
+            $posicionBola = rand(0,59);
+        } while ($bolas[$posicionBola] == true);
+        //True = bola ha salido.
+        //False = bola no ha salido.
 
+        //Adquirimos la bola.
+        $bola = $posicionBola+1;
+        
+        //Establecemos la posicion en true.
+        $bolas[$posicionBola] = true;
 
-    //  PARTE DE EMILIO
-
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-$bolas = array_fill(0, 60,false);
-
-$bola = tambor($bolas);
-
-function tambor(&$bolas) {
-
-    //Selecciona una posicion aleatoria del array bolas para sacar la bola a continuación.
-    do {
-        $posicionBola = rand(0,59);
-    } while ($bolas[$posicionBola] == true);
-    //True = bola ha salido.
-    //False = bola no ha salido.
-
-    //Adquirimos la bola.
-    $bola = $posicionBola+1;
-    
-    //Establecemos la posicion en true.
-    $bolas[$posicionBola] = true;
-
-    //Devuelve el valor de la bola para ser utilizado en los cartones.
-    return $bola;
-}
-
-function mostrarBola($bola) {
-
-    //Establezco la ruta donde se encuentra  la imagen de la bola.
-    $rutaImagen = './images/' . $bola . '.png';
-
-    //Codigo html para indexar la imagen de la bola en el html.
-    echo '<img src="' . $rutaImagen . '" alt="Bola" />';
-
-}
-
-function mostrarBolas() {
-    $contador=1;
-
-    echo "<table border='1' cellpadding='5' cellspacing='0'>";
-
-    for ($i = 0; $i < 4; $i++) {
-        echo "<tr>";
-        for ($j = 0; $j < 15; $j++) {
-            echo "<td style='text-align:center;'>";
-            echo "<img src='./images/$contador.png' width='50' height='50'>";
-            echo "</td>";
-            $contador++;
-        }
-        echo "</tr>";
+        //Devuelve el valor de la bola para ser utilizado en los cartones.
+        return $bola;
     }
-
-
-    echo "</table>";
-
-}
-
-
-
-
-
 ?>
-

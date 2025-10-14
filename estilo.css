@@ -1,76 +1,101 @@
-div{
-    position: absolute;
-}
-.carton h2{
+#titulo {
     font-family: 'Courier New', Courier, monospace;
+    font-size: 5vh;
+    font-weight: 900;
     text-align: center;
-    font-size: 35px;
-    padding: 0px;
-    margin: 3px;
-}
-div#j1{
-    margin-left: 50px;
-    background-color: rgba(8, 56, 230, 0.226);
-    border: solid rgba(8, 49, 230, 0.978) 5px ;
-    padding: 5px;
-    border-radius: 5px;
-    
+    color: #1b5e20;
+    margin-top: 1vh;
+    margin-bottom: 0.5vh;
 }
 
-div#j2{
-    margin-left: 450px;
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.carton h2 {
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    font-size: 2.5vh;
+    padding: 0;
+    margin: 3px;
+}
+
+.contenedor-jugadores {
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    gap: 15px;
+    transform: scale(0.95);
+    transform-origin: top center;
+    margin-top: 0;
+}
+
+div#j1, div#j2, div#j3, div#j4 {
+    border-radius: 5px;
+    padding: 6px;
+    transform: scale(1);
+}
+
+div#j1 {
+    background-color: rgba(8, 56, 230, 0.226);
+    border: solid rgba(8, 49, 230, 0.978) 3px;
+}
+div#j2 {
     background-color: rgba(230, 149, 8, 0.226);
-    border: solid rgba(230, 134, 8, 0.978) 5px ;
-    padding: 5px;
-    border-radius: 5px;
+    border: solid rgba(230, 134, 8, 0.978) 3px;
 }
-div#j3{
-    margin-left: 850px;
+div#j3 {
     background-color: rgba(230, 219, 8, 0.226);
-    border: solid rgba(230, 212, 8, 0.978) 5px ;
-    padding: 5px;
-    border-radius: 5px;
+    border: solid rgba(230, 212, 8, 0.978) 3px;
 }
-div#j4{
-    margin-left: 1250px;
+div#j4 {
     background-color: rgba(101, 8, 230, 0.226);
-    border: solid rgba(108, 8, 230, 0.978) 5px ;
-    padding: 5px;
-    border-radius: 5px;
+    border: solid rgba(108, 8, 230, 0.978) 3px;
 }
-#bolas{
-    box-shadow: 10px 10px;
-    border-radius: 5px;
-    margin-left: 850px;
-    margin-top: 600px;
-}
-table,tr,td{
+
+table, tr, td {
     border: solid;
-    font-size: 20px;
+    font-size: 2vh;
     background-color: white;
 }
-table{
-    border-width: 3px;
-    border-collapse: collapse;
-    border:"1"; 
-}
-tr,td{
+
+table {
     border-width: 2px;
     border-collapse: collapse;
-    padding: 5px;
-    width: 25px;
+    margin: 0 auto;
 }
-td{
-    text-align:center;
+
+tr, td {
+    border-width: 1px;
+    border-collapse: collapse;
+    padding: 4px;
+    width: 26px;
+    height: 26px;
 }
-input#sacarbola{
-    position: absolute;
-    margin-top: 600px;
-    padding: 10px 20px; 
-    border-width: 2px; 
-    border-color: aquamarine; 
-    background-color: teal; 
-    color: white; 
-    border-radius: 5px; 
-    cursor: pointer;
+
+td {
+    text-align: center;
+}
+
+.ganador {
+    text-align: center;
+    margin: 1vh auto 0 auto;
+    background-color: #d4edda;
+    border: 3px solid #155724;
+    border-radius: 10px;
+    padding: 5px 15px;
+    width: fit-content;
+    font-size: 2.2vh;
+    font-weight: bold;
+    color: #155724;
+    transform: scale(0.95);
 }
