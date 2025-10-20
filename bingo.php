@@ -8,6 +8,12 @@
 </head>
 <body>
     <?php
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $num_jugadores = limpiar_campos($_POST("num_jugadores"));
+        $num_cartones = limpiar_campos($_POST("num_cartones"));
+    }
+    
+
     $carton1=[]; $carton2=[]; $carton3=[];
     $carton4=[]; $carton5=[]; $carton6=[];
     $carton7=[]; $carton8=[]; $carton9=[];
@@ -115,7 +121,14 @@
     </div>
 </body>
 </html>
-<?php    
+<?php
+    function limpiar_campos($data) {
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+        return $data;
+    }
+
     function rellenar(&$carton){
     for ($i=0; $i < 3; $i++) { 
         for ($j=0; $j < 7; $j++) { 
