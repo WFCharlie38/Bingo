@@ -9,8 +9,8 @@
 <body>
     <?php
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $num_jugadores = limpiar_campos($_POST("num_jugadores"));
-        $num_cartones = limpiar_campos($_POST("num_cartones"));
+        $num_jugadores = limpiar_campos($_POST["num_jugadores"]);
+        $num_cartones = limpiar_campos($_POST["num_cartones"]);
     }
     
 
