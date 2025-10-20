@@ -12,7 +12,9 @@
         $num_jugadores = limpiar_campos($_POST["num_jugadores"]);
         $num_cartones = limpiar_campos($_POST["num_cartones"]);
     }
-    
+    $aJugadores=[];
+
+    crear($num_jugadores, $num_cartones, $aJugadores);
 
     $carton1=[]; $carton2=[]; $carton3=[];
     $carton4=[]; $carton5=[]; $carton6=[];
@@ -128,6 +130,22 @@
         $data = htmlspecialchars($data);
         return $data;
     }
+
+    function crear($numJugadores, $numCartones, &$aJugadores){
+
+        for ($i = 1; $i <= $numJugadores; $i++) {
+        ${"jugador$i"} = []; 
+        $aJugadores[] = &${"jugador$i"}; 
+         }
+
+
+    for ($i = 1; $i <= $numJugadores; $i++) {
+        for ($j = 1; $j <= $numCartones; $j++){	
+        ${"carton$j"} = []; 
+        ${"jugdor$i"}[] = &${"carton$j"};} 
+             }
+     }
+
 
     function rellenar(&$carton){
     for ($i=0; $i < 3; $i++) { 
